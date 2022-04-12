@@ -1,15 +1,31 @@
 <template>
-   <div class="text-center">
-    <div>
-      <h1>Home</h1>
-      <p>This is the Home page of the Nuxt.js Application</p>
+  <div>
+    
+      <ul>
+       <li>placeholder Text</li>
+      </ul>
+     
     </div>
-  </div>
+  
 </template>
 
 <script>
-export default {
-  name: 'IndexPage',
-  
-}
+  import {axiosGet} from '@/plugins/api'
+
+  export default {
+    data() {
+      return {
+        show: [],
+        show2: []
+      }
+    },
+    async fetch() {
+      /*
+      this.show = await fetch('http://localhost:8000/api/films/shows/s10').then(res=> res.json())
+      this.show2 = await axiosGet('http://localhost:8000/api/films/shows/s21').then(function(res){
+        return res.data
+      })*/
+    },
+
+  }
 </script>
