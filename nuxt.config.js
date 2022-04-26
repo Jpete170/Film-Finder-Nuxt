@@ -6,7 +6,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Nuxt App',
+    title: 'Film Finder',
     htmlAttrs: {
       lang: 'en'
     },
@@ -42,6 +42,7 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
+    
     
   ],
   
