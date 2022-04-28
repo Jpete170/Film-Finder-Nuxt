@@ -95,6 +95,6 @@
       })
       this.shows_loaded = true;
     },
-
+ 
   }
 </script>
