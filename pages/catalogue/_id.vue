@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="">
-          <b-button :href='`/${show.type}`' variant="secondary">Go Back</b-button>  
+          <b-button @click="$router.back()" variant="secondary">Go Back</b-button>  
         </div>
         <div class="container">
             <h1 class="text-center">{{show.title}}</h1>
