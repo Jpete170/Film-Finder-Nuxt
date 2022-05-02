@@ -3,6 +3,10 @@
     <div class='text-center'>
       <h1 class="">Film Finder</h1>
     </div>
+    <div id="search">
+      <Search/>
+      <br/>
+    </div>
 
     <div class="" id="movies">
       <h2>Movies</h2>

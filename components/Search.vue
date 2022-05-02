@@ -1,0 +1,55 @@
+<template>
+    <div>
+        <h2>Search</h2>
+        <br/>
+        <div>
+            <b-row>
+                <b-col>
+                  <b-form-select v-model="selected" :options="columns"/>  
+                </b-col>
+                <b-col>
+                   <b-form-input v-model="query" placeholder="Enter what you want to search for." /> 
+                </b-col>
+                <b-col>
+                    <b-form-input v-model="limit" placeholder="Enter the amount of results you want." /> 
+                </b-col>
+                
+                <b-button variant="primary" :href='`/search?column=${this.selected}&query=${this.query}&limit=${this.limit}`'>Search</b-button> 
+            </b-row>
+            
+        </div>
+    </div>
+</template>
+
+<style>
+
+</style>
+
+<script>
+    export default{
+        data(){
+            return{
+                columns:[
+                    {value: null, text:'Select an Option'},
+                    {value: 'type', text:'Movie or TV Show'},
+                    {value: 'title', text:'Title'},
+                    {value: 'director', text: 'Director'},
+                    {value: 'cast', text:'Cast'},
+                    {value: 'country', text:'Country'},
+                    {value: 'date_added', text:'Date Added to Service'},
+                    {value: 'release_year', text:'The Release Year for a Movie / TV Show'},
+                    {value:'rating', text:'Rating'},
+                    {value:'duration', text:'Duration'},
+                    {value:'listed_in', text:'Genres'},
+                    {value: 'description', text:'Description'}
+                ],
+                query: '',
+                limit: '',
+                selected: null
+            }
+        },
+        async fetch(){
+
+        },
+    }
+</script>
