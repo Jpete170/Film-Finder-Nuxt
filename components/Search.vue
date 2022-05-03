@@ -13,8 +13,10 @@
                 <b-col>
                     <b-form-input v-model="limit" placeholder="Enter the amount of results you want." /> 
                 </b-col>
+                <div>
+                   <b-button variant="primary" :href='`/search?column=${this.selected}&query=${this.query}&limit=${this.limit}`'>Search</b-button>  
+                </div>
                 
-                <b-button variant="primary" :href='`/search?column=${this.selected}&query=${this.query}&limit=${this.limit}`'>Search</b-button> 
             </b-row>
             
         </div>

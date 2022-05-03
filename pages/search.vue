@@ -8,7 +8,7 @@
         </div>
         <br/>
         <div>
-            <h2>Results for "{{this.$route.query.query}}" in "{{this.$route.query.column}}"</h2>
+            <h2>{{this.limit}} Results for "{{this.$route.query.query}}" in "{{this.$route.query.column}}"</h2>
             <div>
                 <b-row align-h="center">
                     <div v-for="r in results" :key=r.show_id>
@@ -56,7 +56,7 @@ import { axiosGet } from '../plugins/api'
             this.column = this.$route.query.column;
             this.query = this.$route.query.query;
             this.limit = this.$route.query.limit;
-
+            //
             this.results = await axiosGet(`/films/search?column=${this.column}&query=${this.query}&limit=${this.limit}`).then(function(res){
                 return res.data
             })

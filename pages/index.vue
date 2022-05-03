@@ -3,6 +3,10 @@
     <div class='text-center'>
       <h1 class="">Film Finder</h1>
     </div>
+    <div>
+      <p>Welcome to Film Finder! A website that allows to search a variety of Movie and TV Shows available from across the globe.</p>
+      <p>The Titles listed below is just a small selection of items available to browse.</p>
+    </div>
     <div id="search">
       <Search/>
       <br/>
@@ -11,7 +15,7 @@
     <div class="" id="movies">
       <h2>Movies</h2>
       <div class="" v-if="!movies_loaded">
-        <b-spinner label="spinning"></b-spinner>
+        <b-spinner label=""></b-spinner>
       </div>
       <div class="" v-if="movies_loaded">
         <b-row class="b-row" align-h="center" cols="3"><!--Grid Row-->
@@ -33,14 +37,16 @@
             </div>
           </b-row>
       </div> <!--End v-if-->
-
+      <div>
+        <b-button href="/movies" variant="primary">View more Movies</b-button>
+      </div>
     </div>
-
+    <br/>
     <div class="" id="tv-shows">
       <h2>TV Shows</h2>
 
       <div class="" v-if="!shows_loaded">
-        <b-spinner label="spinning" />
+        <b-spinner label="" />
       </div>
       <div class="" v-if="shows_loaded">
         <b-row class="b-row" align-h="center" cols="3"><!--Grid Row-->
@@ -63,9 +69,13 @@
           
         </b-row>
       </div> <!--End v-if-->
-
+      <div>
+        <b-button href="/shows" variant="primary">View more TV Shows</b-button>
+      </div>
     </div>
-    
+
+    <!--The below <br> creates a space between the previous element and the footer element -->
+    <br/>
   </div>
 </template>
 
