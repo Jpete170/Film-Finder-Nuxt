@@ -9,7 +9,7 @@
         <br/>
         <div>
             <h2>{{this.limit}} Results for "{{this.$route.query.query}}" in "{{this.$route.query.column}}"</h2>
-            <div>
+            <div v-if="this.error == 'false'">
                 <b-row align-h="center">
                     <div v-for="r in results" :key=r.show_id>
                         <b-col>
@@ -28,6 +28,10 @@
                         </b-col>
                     </div>
                 </b-row>
+            </div>
+            <div v-else-if="this.error == 'true'">
+                <p>An Error Has Occurred</p>
+                <p>{{this.errorMessage}}</p>
             </div>
         </div>
     </div>
@@ -49,6 +53,8 @@ import { axiosGet } from '../plugins/api'
                 query: '',
                 limit: '',
                 results: [],
+                error: 'false',
+                errorMessage: [],
             }
         },
         async fetch(){
@@ -57,9 +63,17 @@ import { axiosGet } from '../plugins/api'
             this.query = this.$route.query.query;
             this.limit = this.$route.query.limit;
             //
-            this.results = await axiosGet(`/films/search?column=${this.column}&query=${this.query}&limit=${this.limit}`).then(function(res){
-                return res.data
-            })
+            try{
+                this.results = await axiosGet(`/films/search?column=${this.column}&query=${this.query}&limit=${this.limit}`).then(function(res){
+                    console.log(res)
+                    return res.data
+                    })
+            } catch(error){
+                this.error = 'true';
+                this.errorMessage = error
+                console.log(error)
+            }
+            
         },
          methods:{
             refresh(){

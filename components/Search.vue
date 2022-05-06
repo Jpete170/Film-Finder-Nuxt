@@ -10,8 +10,8 @@
                 <b-col>
                    <b-form-input v-model="query" placeholder="Enter what you want to search for." /> 
                 </b-col>
-                <b-col>
-                    <b-form-input v-model="limit" placeholder="Enter the amount of results you want." /> 
+                <b-col v-for="type in types" :key="type">
+                    <b-form-input v-model="limit" placeholder="Enter the amount of results you want." :id="`type-${type}`" :type="type"/> 
                 </b-col>
                 <div>
                    <b-button variant="primary" :href='`/search?column=${this.selected}&query=${this.query}&limit=${this.limit}`'>Search</b-button>  
@@ -33,7 +33,7 @@
             return{
                 columns:[
                     {value: null, text:'Select an Option'},
-                    {value: 'type', text:'Movie or TV Show'},
+                    {value: 'type', text:'Type of Media (Film or TV Show)'},
                     {value: 'title', text:'Title'},
                     {value: 'director', text: 'Director'},
                     {value: 'cast', text:'Cast'},
@@ -47,7 +47,8 @@
                 ],
                 query: '',
                 limit: '',
-                selected: null
+                selected: null,
+                types:['number']
             }
         },
         async fetch(){
