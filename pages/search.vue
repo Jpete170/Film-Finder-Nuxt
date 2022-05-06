@@ -10,7 +10,7 @@
         <div>
             <h2>{{this.limit}} Results for "{{this.$route.query.query}}" in "{{this.$route.query.column}}"</h2>
             <div v-if="this.error == 'false'">
-                <b-row align-h="center">
+                <b-row align-h="center" cols="3">
                     <div v-for="r in results" :key=r.show_id>
                         <b-col>
                             <b-card

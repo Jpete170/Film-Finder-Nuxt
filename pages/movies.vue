@@ -17,6 +17,9 @@
                     <b-col md="auto">
                         <b-form-radio v-model="limit" :aria-describedby="ariaDescribedBy" value='20'>20 Items</b-form-radio>
                     </b-col>
+                    <b-col md="auto">
+                        <b-form-radio v-model="limit" value="10000">Show All</b-form-radio>
+                    </b-col>
                 </b-row>
                 </b-container>
                 

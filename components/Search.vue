@@ -1,6 +1,9 @@
 <template>
     <div>
         <h2>Search</h2>
+        <div>
+            <!--Insert explanation about the Search function here eventually -->
+        </div>
         <br/>
         <div>
             <b-row>
