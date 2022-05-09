@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="border border-secondary p-4">
         <h2>Search</h2>
         <div>
             <!--Insert explanation about the Search function here eventually -->

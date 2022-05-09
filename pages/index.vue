@@ -13,7 +13,7 @@
     </div>
 
     <div class="" id="movies">
-      <h2>Movies</h2>
+      <h2 class="text-center">Movies</h2>
       <div class="" v-if="!movies_loaded">
         <b-spinner label=""></b-spinner>
       </div>
@@ -35,15 +35,14 @@
                 </b-card>
               </b-col>
             </div>
+            <b-button href="/movies" variant="primary" >View more Movies</b-button>
           </b-row>
       </div> <!--End v-if-->
-      <div>
-        <b-button href="/movies" variant="primary">View more Movies</b-button>
-      </div>
+      
     </div>
     <br/>
     <div class="" id="tv-shows">
-      <h2>TV Shows</h2>
+      <h2 class="text-center">TV Shows</h2>
 
       <div class="" v-if="!shows_loaded">
         <b-spinner label="" />
@@ -66,12 +65,10 @@
                 </b-card>
               </b-col>
             </div>
-          
+          <b-button href="/shows" variant="primary">View more TV Shows</b-button>
         </b-row>
       </div> <!--End v-if-->
-      <div>
-        <b-button href="/shows" variant="primary">View more TV Shows</b-button>
-      </div>
+      
     </div>
 
     <!--The below <br> creates a space between the previous element and the footer element -->
@@ -80,9 +77,10 @@
 </template>
 
 <style>
-  h1{
+  h1, h2{
     text-decoration: underline;
   }
+
 </style>
 
 <script>
