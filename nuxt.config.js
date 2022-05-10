@@ -50,6 +50,9 @@ export default {
   build: {
   },
   
-  
+  loading: {
+    color: 'blue',
+    height: '5px',
+  },
   
 }

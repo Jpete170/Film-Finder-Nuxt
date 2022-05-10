@@ -5,3 +5,8 @@
         <Footer />
     </div>
 </template>
+<script>
+    export default{
+        loading: true,
+    }
+</script>

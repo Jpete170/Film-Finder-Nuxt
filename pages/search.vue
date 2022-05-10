@@ -38,6 +38,15 @@
             <div v-if="!this.results_loaded">
                 <b-spinner label="" />
             </div>
+            <div>
+                <div v-if='this.$route.query.column == "null"'>
+                  <p>No search terms were entered, so the entire database will be displayed.</p>  
+                </div>
+                  <p>No search terms were entered, so the entire database will be displayed.</p>
+                <div  v-if='this.$route.query.column == undefined'>
+
+                </div>
+            </div>
             <div v-if="this.error == 'false'">
                 <b-row align-h="center" cols="3">
                     <div v-for="r in results" :key=r.show_id>
@@ -76,6 +85,7 @@
 <script>
 import { axiosGet } from '../plugins/api'
     export default{
+
         data(){
             return{
                 column: this.$route.query.column,
@@ -95,7 +105,7 @@ import { axiosGet } from '../plugins/api'
             //
             
             try {
-                if(this.$route.query.column == "null"){
+                if(this.column == "null" || this.column == undefined){
                     this.results = await axiosGet('/films').then(function(res){
                         return res.data
                     })
