@@ -3,7 +3,7 @@
         <div>
             <h1 class="text-center">Search Results</h1>
         </div>
-        <div>
+        <div >
             <Search/>
             <b-form-group label="Limit Page Items" id="radio-filter">
                 <b-container>
@@ -24,7 +24,7 @@
                             <b-form-radio v-model="limit" value="10000">Show All</b-form-radio>
                         </b-col>
                         
-                        <b-col>
+                        <b-col md="auto">
                           <b-button @click="refresh">Refresh Results</b-button>  
                         </b-col>
                     </b-row>
